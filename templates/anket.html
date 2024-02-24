@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket Soruları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://c.wallhere.com/photos/68/cf/glare_circles_background_light_form-679378.jpg!d'); 
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .anket-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%; /* Sayfa genişliğini artırabilirsiniz */
+            height: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .soru {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #007BFF;
+        }
+        .secenekler {
+            list-style-type: none;
+            padding: 0;
+        }
+        .secenekler li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .secenekler li:last-child {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="anket-container">
+        <h1>Anket Soruları</h1>
+        <form method="post">
+            {% for soru in sorular %}
+                <div class="soru">
+                    <label>{{ soru['metin'] }}</label><br>
+                    {% for secenek, aciklama in soru['secenekler'].items() %}
+                        <label>
+                            <!-- Soru tanımlayıcısı olarak soru['soru'] kullanılıyor -->
+                            <input type="radio" name="{{ soru['soru'] }}" value="{{ secenek }}"> {{ secenek }} - {{ aciklama }}
+                        </label><br>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <input type="submit" value="Cevapları Gönder">
+        </form>        
+    </div>    
+</body>
+</html>

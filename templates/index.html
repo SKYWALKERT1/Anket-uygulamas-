@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anket Uygulaması Giriş Sayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-image: url('https://c.wallhere.com/photos/68/cf/glare_circles_background_light_form-679378.jpg!d'); /* Arka plan resmi için URL */
+            background-size: cover; /* Resmi kaplayacak şekilde ayarla */
+            background-position: center; /* Resmi ortala */
+        }
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.8); /* Formun arkasını biraz opak yap */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type=text], input[type=password] {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box; /* Padding'i genişliğe dahil et */
+        }
+        input[type=submit] {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Kullanıcı Girişi</h2>
+        <form action="#" method="POST">
+            <input type="text" name="kullanici_adi" placeholder="Kullanıcı Adı" required>
+            <input type="password" name="sifre" placeholder="Şifre" required>
+            <input type="submit" value="Giriş Yap">
+        </form>
+    </div>
+</body>
+</html>
